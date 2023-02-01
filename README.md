@@ -1,5 +1,6 @@
 # Welcome to our space!
-Notion: https://ash-femur-7eb.notion.site/6ae6b1befd33429dab84ee2126f28ede?v=545d1690451140a7980f6e61607cf517
+
+[Our Notion Page](https://ash-femur-7eb.notion.site/6ae6b1befd33429dab84ee2126f28ede?v=545d1690451140a7980f6e61607cf517)
 
 # Intro
 
