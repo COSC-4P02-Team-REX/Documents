@@ -1,11 +1,7 @@
 <svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
 	<foreignObject width="100%" height="100%">
 		<div xmlns="http://www.w3.org/1999/xhtml">
-			<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Clio AR App</title>
-    <style>
+	<style>
       /* cspell:disable-file */
       /* webkit printing magic: print all background colors */
       html {
@@ -764,9 +760,8 @@
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
       }
     </style>
-  </head>
-  <body>
-    <article id="6ae6b1be-fd33-429d-ab84-ee2126f28ede" class="page sans">
+    <div class="container">
+				 <article id="6ae6b1be-fd33-429d-ab84-ee2126f28ede" class="page sans">
       <header>
         <img
           class="page-cover-image"
@@ -1291,9 +1286,7 @@
         </table>
       </div>
     </article>
-  </body>
-</html>
-
+			</div>
 		</div>
 	</foreignObject>
 </svg>
