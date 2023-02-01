@@ -1,673 +1,1299 @@
 <svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
 	<foreignObject width="100%" height="100%">
-		<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Clio AR App</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	text-indent: -1.7em;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
+	<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Clio AR App</title>
+    <style>
+      /* cspell:disable-file */
+      /* webkit printing magic: print all background colors */
+      html {
+        -webkit-print-color-adjust: exact;
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @media only screen {
+        body {
+          margin: 2em auto;
+          max-width: 900px;
+          color: rgb(55, 53, 47);
+        }
+      }
+
+      body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+      }
+
+      a,
+      a.visited {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+      }
+
+      h1,
+      h2,
+      h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+      }
+
+      h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+      }
+
+      .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+      }
+
+      .callout {
+        border-radius: 3px;
+        padding: 1rem;
+      }
+
+      figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+      }
+
+      figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+      }
+
+      mark {
+        background-color: transparent;
+      }
+
+      .indented {
+        padding-left: 1.5em;
+      }
+
+      hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      @media only print {
+        img {
+          max-height: 100vh;
+          object-fit: contain;
+        }
+      }
+
+      @page {
+        margin: 1in;
+      }
+
+      .collection-content {
+        font-size: 0.875rem;
+      }
+
+      .column-list {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .column {
+        padding: 0 1em;
+      }
+
+      .column:first-child {
+        padding-left: 0;
+      }
+
+      .column:last-child {
+        padding-right: 0;
+      }
+
+      .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+      }
+
+      .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+      }
+
+      .table_of_contents-indent-2 {
+        margin-left: 3rem;
+      }
+
+      .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+      }
+
+      .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+      }
+
+      table {
+        border-left: none;
+        border-right: none;
+      }
+
+      th,
+      td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+      }
+
+      th {
+        color: rgba(55, 53, 47, 0.6);
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+      }
+
+      li > ol:first-child,
+      li > ul:first-child {
+        margin-block-start: 0.6em;
+      }
+
+      ul > li {
+        list-style: disc;
+      }
+
+      ul.to-do-list {
+        text-indent: -1.7em;
+      }
+
+      ul.to-do-list > li {
+        list-style: none;
+      }
+
+      .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+      }
+
+      ul.toggle > li {
+        list-style: none;
+      }
+
+      ul {
+        padding-inline-start: 1.7em;
+      }
+
+      ul > li {
+        padding-left: 0.1em;
+      }
+
+      ol {
+        padding-inline-start: 1.6em;
+      }
+
+      ol > li {
+        padding-left: 0.2em;
+      }
+
+      .mono ol {
+        padding-inline-start: 2em;
+      }
+
+      .mono ol > li {
+        text-indent: -0.4em;
+      }
+
+      .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+      }
+
+      /* Indent toggle children */
+      .toggle > li > details {
+        padding-left: 1.7em;
+      }
+
+      .toggle > li > details > summary {
+        margin-left: -1.1em;
+      }
+
+      .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+      }
+
+      .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      .simple-table {
+        margin-top: 1em;
+        font-size: 0.875rem;
+        empty-cells: show;
+      }
+      .simple-table td {
+        height: 29px;
+        min-width: 120px;
+      }
+
+      .simple-table th {
+        height: 29px;
+        min-width: 120px;
+      }
+
+      .simple-table-header-color {
+        background: rgb(247, 246, 243);
+        color: black;
+      }
+      .simple-table-header {
+        font-weight: 500;
+      }
+
+      time {
+        opacity: 0.5;
+      }
+
+      .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+      }
+
+      img.icon {
+        border-radius: 3px;
+      }
+
+      .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+      }
+
+      .user-icon-inner {
+        font-size: 0.8em;
+      }
+
+      .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 30vh;
+      }
+
+      .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+      }
+
+      .page-header-icon img {
+        border-radius: 3px;
+      }
+
+      .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+      }
+
+      p > .user {
+        opacity: 0.5;
+      }
+
+      td > .user,
+      td > time {
+        white-space: nowrap;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+      }
+
+      p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .code,
+      code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+      }
+
+      code {
+        color: #eb5757;
+      }
+
+      .code {
+        padding: 1.5em 1em;
+      }
+
+      .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+
+      .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+      }
+
+      blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+      }
+
+      .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+      }
+
+      .bookmark-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+      }
+
+      .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+      }
+
+      .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+      }
+
+      .sans {
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .code {
+        font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono",
+          "Liberation Mono", Courier, monospace;
+      }
+      .serif {
+        font-family: Lyon-Text, Georgia, ui-serif, serif;
+      }
+      .mono {
+        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+      }
+      .pdf .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK JP";
+      }
+      .pdf:lang(zh-CN) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK SC";
+      }
+      .pdf:lang(zh-TW) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK TC";
+      }
+      .pdf:lang(ko-KR) .sans {
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+          "Segoe UI Emoji", "Segoe UI Symbol", "Twemoji", "Noto Color Emoji",
+          "Noto Sans CJK KR";
+      }
+      .pdf .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .code {
+        font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas,
+          "PT Mono", "Liberation Mono", Courier, monospace, "Twemoji",
+          "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .pdf .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK JP";
+      }
+      .pdf:lang(zh-CN) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK SC";
+      }
+      .pdf:lang(zh-TW) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK TC";
+      }
+      .pdf:lang(ko-KR) .serif {
+        font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, "Twemoji",
+          "Noto Color Emoji", "Noto Serif CJK KR";
+      }
+      .pdf .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK JP";
+      }
+      .pdf:lang(zh-CN) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK SC";
+      }
+      .pdf:lang(zh-TW) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK TC";
+      }
+      .pdf:lang(ko-KR) .mono {
+        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
+          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK KR";
+      }
+      .highlight-default {
+        color: rgba(55, 53, 47, 1);
+      }
+      .highlight-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+      }
+      .highlight-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .highlight-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .highlight-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .highlight-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .highlight-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .highlight-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .highlight-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .highlight-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+      }
+      .highlight-gray_background {
+        background: rgba(241, 241, 239, 1);
+      }
+      .highlight-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .highlight-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .highlight-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .highlight-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .highlight-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .highlight-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+      }
+      .highlight-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+      }
+      .highlight-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .block-color-default {
+        color: inherit;
+        fill: inherit;
+      }
+      .block-color-gray {
+        color: rgba(120, 119, 116, 1);
+        fill: rgba(120, 119, 116, 1);
+      }
+      .block-color-brown {
+        color: rgba(159, 107, 83, 1);
+        fill: rgba(159, 107, 83, 1);
+      }
+      .block-color-orange {
+        color: rgba(217, 115, 13, 1);
+        fill: rgba(217, 115, 13, 1);
+      }
+      .block-color-yellow {
+        color: rgba(203, 145, 47, 1);
+        fill: rgba(203, 145, 47, 1);
+      }
+      .block-color-teal {
+        color: rgba(68, 131, 97, 1);
+        fill: rgba(68, 131, 97, 1);
+      }
+      .block-color-blue {
+        color: rgba(51, 126, 169, 1);
+        fill: rgba(51, 126, 169, 1);
+      }
+      .block-color-purple {
+        color: rgba(144, 101, 176, 1);
+        fill: rgba(144, 101, 176, 1);
+      }
+      .block-color-pink {
+        color: rgba(193, 76, 138, 1);
+        fill: rgba(193, 76, 138, 1);
+      }
+      .block-color-red {
+        color: rgba(212, 76, 71, 1);
+        fill: rgba(212, 76, 71, 1);
+      }
+      .block-color-gray_background {
+        background: rgba(241, 241, 239, 1);
+      }
+      .block-color-brown_background {
+        background: rgba(244, 238, 238, 1);
+      }
+      .block-color-orange_background {
+        background: rgba(251, 236, 221, 1);
+      }
+      .block-color-yellow_background {
+        background: rgba(251, 243, 219, 1);
+      }
+      .block-color-teal_background {
+        background: rgba(237, 243, 236, 1);
+      }
+      .block-color-blue_background {
+        background: rgba(231, 243, 248, 1);
+      }
+      .block-color-purple_background {
+        background: rgba(244, 240, 247, 0.8);
+      }
+      .block-color-pink_background {
+        background: rgba(249, 238, 243, 0.8);
+      }
+      .block-color-red_background {
+        background: rgba(253, 235, 236, 1);
+      }
+      .select-value-color-pink {
+        background-color: rgba(245, 224, 233, 1);
+      }
+      .select-value-color-purple {
+        background-color: rgba(232, 222, 238, 1);
+      }
+      .select-value-color-green {
+        background-color: rgba(219, 237, 219, 1);
+      }
+      .select-value-color-gray {
+        background-color: rgba(227, 226, 224, 1);
+      }
+      .select-value-color-opaquegray {
+        background-color: rgba(255, 255, 255, 0.0375);
+      }
+      .select-value-color-orange {
+        background-color: rgba(250, 222, 201, 1);
+      }
+      .select-value-color-brown {
+        background-color: rgba(238, 224, 218, 1);
+      }
+      .select-value-color-red {
+        background-color: rgba(255, 226, 221, 1);
+      }
+      .select-value-color-yellow {
+        background-color: rgba(253, 236, 200, 1);
+      }
+      .select-value-color-blue {
+        background-color: rgba(211, 229, 239, 1);
+      }
+
+      .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+      }
+
+      .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+
+      .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+      }
+    </style>
+  </head>
+  <body>
+    <article id="6ae6b1be-fd33-429d-ab84-ee2126f28ede" class="page sans">
+      <header>
+        <img
+          class="page-cover-image"
+          src="https://www.notlmuseum.ca/shared/skins/default/images/logo.svg"
+          style="object-position: center 63.519999999999996%"
+        />
+        <div class="page-header-icon page-header-icon-with-cover">
+          <img
+            class="icon"
+            src="data:image/jpeg;base64,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"
+          />
+        </div>
+        <h1 class="page-title">Clio AR App</h1>
+      </header>
+      <div class="page-body">
+        <table class="collection-content">
+          <thead>
+            <tr>
+              <th>
+                <span class="icon property-icon"
+                  ><svg
+                    viewBox="0 0 16 16"
+                    style="
+                      width: 14px;
+                      height: 14px;
+                      display: block;
+                      fill: rgba(55, 53, 47, 0.45);
+                      flex-shrink: 0;
+                      -webkit-backface-visibility: hidden;
+                    "
+                    class="typesTitle"
+                  >
+                    <path
+                      d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"
+                    ></path></svg></span
+                >Project name
+              </th>
+              <th>
+                <span class="icon property-icon"
+                  ><svg
+                    viewBox="0 0 16 16"
+                    style="
+                      width: 14px;
+                      height: 14px;
+                      display: block;
+                      fill: rgba(55, 53, 47, 0.45);
+                      flex-shrink: 0;
+                      -webkit-backface-visibility: hidden;
+                    "
+                    class="typesStatus"
+                  >
+                    <path
+                      d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"
+                    ></path></svg></span
+                >Status
+              </th>
+              <th>
+                <span class="icon property-icon"
+                  ><svg
+                    viewBox="0 0 16 16"
+                    style="
+                      width: 14px;
+                      height: 14px;
+                      display: block;
+                      fill: rgba(55, 53, 47, 0.45);
+                      flex-shrink: 0;
+                      -webkit-backface-visibility: hidden;
+                    "
+                    class="typesDate"
+                  >
+                    <path
+                      d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"
+                    ></path></svg></span
+                >Dates
+              </th>
+              <th>
+                <span class="icon property-icon"
+                  ><svg
+                    viewBox="0 0 16 16"
+                    style="
+                      width: 14px;
+                      height: 14px;
+                      display: block;
+                      fill: rgba(55, 53, 47, 0.45);
+                      flex-shrink: 0;
+                      -webkit-backface-visibility: hidden;
+                    "
+                    class="typesRollup"
+                  >
+                    <path
+                      d="M1.25293 6.82031C1.25293 9.88965 3.74805 12.3848 6.81738 12.3848C7.95898 12.3848 9.00488 12.0361 9.87988 11.4414L13.0244 14.5859C13.2158 14.7842 13.4824 14.873 13.749 14.873C14.3301 14.873 14.7471 14.4355 14.7471 13.8682C14.7471 13.5947 14.6514 13.3418 14.4668 13.1504L11.3428 10.0195C11.9922 9.12402 12.3818 8.0166 12.3818 6.82031C12.3818 3.75098 9.88672 1.25586 6.81738 1.25586C3.74805 1.25586 1.25293 3.75098 1.25293 6.82031ZM2.70215 6.82031C2.70215 4.55078 4.54102 2.70508 6.81738 2.70508C9.08691 2.70508 10.9326 4.55078 10.9326 6.82031C10.9326 9.08984 9.08691 10.9355 6.81738 10.9355C4.54102 10.9355 2.70215 9.08984 2.70215 6.82031Z"
+                    ></path></svg></span
+                >Completion
+              </th>
+              <th>
+                <span class="icon property-icon"
+                  ><svg
+                    viewBox="0 0 16 16"
+                    style="
+                      width: 14px;
+                      height: 14px;
+                      display: block;
+                      fill: rgba(55, 53, 47, 0.45);
+                      flex-shrink: 0;
+                      -webkit-backface-visibility: hidden;
+                    "
+                    class="typesPerson"
+                  >
+                    <path
+                      d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"
+                    ></path></svg></span
+                >People
+              </th>
+              <th>
+                <span class="icon property-icon"
+                  ><svg
+                    viewBox="0 0 16 16"
+                    style="
+                      width: 14px;
+                      height: 14px;
+                      display: block;
+                      fill: rgba(55, 53, 47, 0.45);
+                      flex-shrink: 0;
+                      -webkit-backface-visibility: hidden;
+                    "
+                    class="typesRelation"
+                  >
+                    <path
+                      d="M13.1475 10.5869V3.72363C13.1475 3.25195 12.833 2.93066 12.3477 2.93066H5.48438C5.02637 2.93066 4.70508 3.27246 4.70508 3.67578C4.70508 4.07227 5.05371 4.40039 5.46387 4.40039H7.89746L10.8438 4.30469L9.59961 5.39844L3.08496 11.9199C2.92773 12.0771 2.8457 12.2686 2.8457 12.46C2.8457 12.8564 3.20801 13.2256 3.61816 13.2256C3.80957 13.2256 3.99414 13.1504 4.15137 12.9932L10.6729 6.47168L11.7803 5.22754L11.6641 8.05762V10.6074C11.6641 11.0176 11.9922 11.373 12.4023 11.373C12.8057 11.373 13.1475 11.0312 13.1475 10.5869Z"
+                    ></path></svg></span
+                >Tasks
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="ccc1d426-eb3a-4fd6-a779-4507dd69c7b3">
+              <td class="cell-title">
+                <a
+                  href="https://www.notion.so/IPAD-UI-ccc1d426eb3a4fd6a7794507dd69c7b3"
+                  ><img
+                    class="icon"
+                    src="https://www.notion.so/icons/target_lightgray.svg"
+                  />IPAD UI
+                </a>
+              </td>
+              <td class="cell-notion://projects/status_property">
+                <span class="status-value"
+                  ><div class="status-dot"></div>
+                  Backlog</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_dates_property"></td>
+              <td class="cell-notion://projects/completion_rollup"></td>
+              <td class="cell-notion://projects/people_property">
+                <span class="user"
+                  ><span class="icon text-icon user-icon"
+                    ><span class="user-icon-inner">N</span></span
+                  >Naitik</span
+                ><span class="user"
+                  ><span class="icon text-icon user-icon"
+                    ><span class="user-icon-inner">a</span></span
+                  >anishka shetty</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a/AEdFTp4a4LEHumn8MfKTcN9w9j7_p8XFXysc7BvPTlba=s100"
+                    class="icon user-icon"
+                  />Darshak Bambharoliya</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a-/ACNPEu8rDXbW_0G-of5j0hKOCo5EtEYtVxNE1BSxAQEj9A=s100"
+                    class="icon user-icon"
+                  />Aum Pandya</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_to_task_relation">
+                <a
+                  href="https://www.notion.so/Configure-environment-variables-and-dockerize-the-development-repo-587ccfeebf294da4a4813a8ee3430dae"
+                  >Configure environment variables and dockerize the development
+                  repo</a
+                >,
+                <a
+                  href="https://www.notion.so/Configure-simulator-for-IPAD-OS-c2dfe69d04044f8687931a99b4771f86"
+                  >Configure simulator for IPAD OS</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-Startup-Page-1487ca529abc4fce8e2a4a7070cb0d6a"
+                  >Create Startup Page</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-Login-Add-authentication-46bf003dc26741d4bfbdad67cb499c3c"
+                  >Create Login / Add authentication </a
+                >,
+                <a
+                  href="https://www.notion.so/Create-main-menu-for-App-0d7af1e29a8446ebac79454b1cd5c280"
+                  >Create main menu for App</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-Floating-side-elements-9914558aa2c34faebba5dbd0c9f71615"
+                  >Create Floating side elements </a
+                >,
+                <a
+                  href="https://www.notion.so/Create-log-out-button-to-end-tour-b8655892289e49e78a139a60ef5c650f"
+                  >Create log out button to end tour</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-Help-tutorial-tour-b16bbb123c134c4e8d16b8cac113997b"
+                  >Create Help/tutorial tour </a
+                >,
+                <a
+                  href="https://www.notion.so/User-feedback-page-at-the-end-of-the-tour-1c8f7e50863f4305aad51671b3ea2bed"
+                  >User feedback page at the end of the tour</a
+                >,
+                <a
+                  href="https://www.notion.so/New-taskcreate-Accessibility-setting-UI-3c2f64be939f461aa10be0bf3d3de294"
+                  >New taskcreate Accessibility setting / UI</a
+                >,
+                <a
+                  href="https://www.notion.so/New-taskbootstrap-a-skeleton-app-43fdff01529b437ba5e21d4402e6741e"
+                  >New taskbootstrap a skeleton app</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-UI-elements-using-Figma-Adobe-12c8322fd8c64c1daa370f437d1a5d9e"
+                  >Create UI elements using Figma/Adobe</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-a-startup-screen-to-choose-if-the-user-is-a-minor-or-an-adult-e84411e2aa7d41b793a0c88e749e7f30"
+                  >Create a startup screen to choose if the user is a minor or
+                  an adult</a
+                >
+              </td>
+            </tr>
+            <tr id="d011c104-204e-4f56-ad8e-7ac7ed3154ab">
+              <td class="cell-title">
+                <a
+                  href="https://www.notion.so/IPAD-UI-Proof-of-Concept-d011c104204e4f56ad8e7ac7ed3154ab"
+                  ><img
+                    class="icon"
+                    src="https://www.notion.so/icons/target_lightgray.svg"
+                  />IPAD UI - Proof of Concept</a
+                >
+              </td>
+              <td class="cell-notion://projects/status_property">
+                <span class="status-value select-value-color-yellow"
+                  ><div class="status-dot status-dot-color-yellow"></div>
+                  In Progress</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_dates_property">
+                <time>@February 4, 2023</time>
+              </td>
+              <td class="cell-notion://projects/completion_rollup"></td>
+              <td class="cell-notion://projects/people_property">
+                <span class="user"
+                  ><span class="icon text-icon user-icon"
+                    ><span class="user-icon-inner">N</span></span
+                  >Naitik</span
+                ><span class="user"
+                  ><span class="icon text-icon user-icon"
+                    ><span class="user-icon-inner">a</span></span
+                  >anishka shetty</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a/AEdFTp4a4LEHumn8MfKTcN9w9j7_p8XFXysc7BvPTlba=s100"
+                    class="icon user-icon"
+                  />Darshak Bambharoliya</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a-/ACNPEu8rDXbW_0G-of5j0hKOCo5EtEYtVxNE1BSxAQEj9A=s100"
+                    class="icon user-icon"
+                  />Aum Pandya</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_to_task_relation">
+                <a
+                  href="https://www.notion.so/Install-Tools-required-ace6603d888443f58b863dc8a4c72054"
+                  >Install Tools required</a
+                >,
+                <a
+                  href="https://www.notion.so/Configure-camera-api-to-work-with-unity-7b11f43a989e4144881809a401502b29"
+                  >Configure camera api to work with unity</a
+                >,
+                <a
+                  href="https://www.notion.so/Connect-app-to-backend-Unity-1cb2a2c870564938ae97e83d5982f71c"
+                  >Connect app to backend/Unity</a
+                >,
+                <a
+                  href="https://www.notion.so/Bootstrap-a-skeleton-app-9d6759d18f45490fb9ea1b136dbeba79"
+                  >Bootstrap a skeleton app</a
+                >,
+                <a
+                  href="https://www.notion.so/Configure-simulator-for-IPAD-OS-0360e65dad554356909c74c210e55141"
+                  >Configure simulator for IPAD OS</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-UI-elements-using-Figma-Adobe-403895be32244e4f8985c91c8b2fb069"
+                  >Create UI elements using Figma/Adobe</a
+                >,
+                <a
+                  href="https://www.notion.so/configure-simulator-for-IPAD-OS-b26fc44415ee4108964267ec7124e128"
+                  >configure simulator for IPAD OS</a
+                >
+              </td>
+            </tr>
+            <tr id="a039d11f-8d9a-4a36-be7a-345636fb54a7">
+              <td class="cell-title">
+                <a
+                  href="https://www.notion.so/Backend-Hosting-a039d11f8d9a4a36be7a345636fb54a7"
+                  ><img
+                    class="icon"
+                    src="https://www.notion.so/icons/target_lightgray.svg"
+                  />Backend/Hosting</a
+                >
+              </td>
+              <td class="cell-notion://projects/status_property">
+                <span class="status-value"
+                  ><div class="status-dot"></div>
+                  Backlog</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_dates_property"></td>
+              <td class="cell-notion://projects/completion_rollup"></td>
+              <td class="cell-notion://projects/people_property">
+                <span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a/AEdFTp55gB25Cae8ZRvuHVzsBTwQR6f6Gfw4zco4UlK-6g=s100"
+                    class="icon user-icon"
+                  />Sneh Patel</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a-/ACNPEu9iSGC3vhSKZWutXmqafwgih8t31PblQRn9YtcECA=s100"
+                    class="icon user-icon"
+                  />parth patel</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_to_task_relation"></td>
+            </tr>
+            <tr id="170c0e4d-2581-4715-8b6d-77b67ea917c5">
+              <td class="cell-title">
+                <a
+                  href="https://www.notion.so/Unity-Animation-and-plugins-170c0e4d258147158b6d77b67ea917c5"
+                  ><img
+                    class="icon"
+                    src="https://www.notion.so/icons/target_lightgray.svg"
+                  />Unity Animation and plugins</a
+                >
+              </td>
+              <td class="cell-notion://projects/status_property">
+                <span class="status-value"
+                  ><div class="status-dot"></div>
+                  Backlog</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_dates_property"></td>
+              <td class="cell-notion://projects/completion_rollup"></td>
+              <td class="cell-notion://projects/people_property">
+                <span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a-/ACNPEu9iSGC3vhSKZWutXmqafwgih8t31PblQRn9YtcECA=s100"
+                    class="icon user-icon"
+                  />parth patel</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a/AEdFTp55gB25Cae8ZRvuHVzsBTwQR6f6Gfw4zco4UlK-6g=s100"
+                    class="icon user-icon"
+                  />Sneh Patel</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a-/ACNPEu-9XVgWhfdjgi8q_IC8CFYVvCh6P8XMeBrUmVH2WAY=s100"
+                    class="icon user-icon"
+                  />Akshar Patel</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_to_task_relation">
+                <a
+                  href="https://www.notion.so/Create-AR-objects-List-48c1360d7eff4ff6bc38ebf52685059a"
+                  >Create AR objects - [List]</a
+                >,
+                <a
+                  href="https://www.notion.so/Scan-museum-for-trigger-surfaces-eda67be095d341e39a4d4cd30683f30a"
+                  >Scan museum for trigger surfaces</a
+                >,
+                <a
+                  href="https://www.notion.so/Enable-animation-flow-and-real-time-overlay-726a05c3de064216881c1131befcfa1d"
+                  >Enable animation flow and real time overlay</a
+                >,
+                <a
+                  href="https://www.notion.so/Set-animation-boundaries-and-scaling-based-accessibility-settings-e3c425fbec15450186626b42b58a4782"
+                  >Set animation boundaries and scaling based accessibility
+                  settings</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-markers-and-triggers-on-scanned-3d-model-0e89c39c54ec4b20854f8991e15318f8"
+                  >Create markers and triggers on scanned 3d model</a
+                >,
+                <a
+                  href="https://www.notion.so/Audio-Video-channel-6a8932b91ab34546b1551d42c0014ac4"
+                  >Audio/Video channel</a
+                >,
+                <a
+                  href="https://www.notion.so/Filter-PG-rated-content-2633f72dd63e495f99f4b43e682e9fca"
+                  >Filter PG rated content</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-animation-based-on-true-events-33c2c720641a4982917436de61577e76"
+                  >Create animation based on true events</a
+                >,
+                <a
+                  href="https://www.notion.so/Develop-interactive-animations-list-27a5733f9c96446491989c08374a2f42"
+                  >Develop interactive animations -[list]</a
+                >
+              </td>
+            </tr>
+            <tr id="aa7e1309-7ab8-4e3b-8aa9-cb4d6ba66afa">
+              <td class="cell-title">
+                <a
+                  href="https://www.notion.so/Unity-Animation-and-plugins-Proof-of-Concept-aa7e13097ab84e3b8aa9cb4d6ba66afa"
+                  ><img
+                    class="icon"
+                    src="https://www.notion.so/icons/target_lightgray.svg"
+                  />Unity Animation and plugins - Proof of Concept</a
+                >
+              </td>
+              <td class="cell-notion://projects/status_property">
+                <span class="status-value select-value-color-yellow"
+                  ><div class="status-dot status-dot-color-yellow"></div>
+                  In Progress</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_dates_property">
+                <time>@February 4, 2023</time>
+              </td>
+              <td class="cell-notion://projects/completion_rollup"></td>
+              <td class="cell-notion://projects/people_property">
+                <span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a-/ACNPEu9iSGC3vhSKZWutXmqafwgih8t31PblQRn9YtcECA=s100"
+                    class="icon user-icon"
+                  />parth patel</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a/AEdFTp55gB25Cae8ZRvuHVzsBTwQR6f6Gfw4zco4UlK-6g=s100"
+                    class="icon user-icon"
+                  />Sneh Patel</span
+                ><span class="user"
+                  ><img
+                    src="https://lh3.googleusercontent.com/a-/ACNPEu-9XVgWhfdjgi8q_IC8CFYVvCh6P8XMeBrUmVH2WAY=s100"
+                    class="icon user-icon"
+                  />Akshar Patel</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_to_task_relation">
+                <a
+                  href="https://www.notion.so/Install-tools-required-5728eda4789a455d9cf8eff3dd567ec4"
+                  >Install tools required </a
+                >,
+                <a
+                  href="https://www.notion.so/Build-an-avatar-in-unity-8cf12e56809246f894a7e48d02fd945e"
+                  >Build an avatar in unity</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-face-capture-for-the-avatar-6626167fef724a8e845c6dd151597f8d"
+                  >Create face capture for the avatar</a
+                >,
+                <a
+                  href="https://www.notion.so/Create-animation-for-Avatar-99dfe1e7bf8a436bb57fd0676b0f6dee"
+                  >Create animation for Avatar </a
+                >,
+                <a
+                  href="https://www.notion.so/Put-avatar-in-3d-scanned-environment-76ab8634bad14c499a09f74a862fca86"
+                  >Put avatar in 3d scanned environment</a
+                >,
+                <a
+                  href="https://www.notion.so/Configure-triggers-for-animation-b0f21fe1f2324ca88bb12b46a720833f"
+                  >Configure triggers for animation</a
+                >,
+                <a
+                  href="https://www.notion.so/Put-in-3d-awareness-14775edcd7f847c08c1f94bbfd8bf395"
+                  >Put in 3d awareness </a
+                >,
+                <a
+                  href="https://www.notion.so/Export-everything-91d670ea582b40cb92f1419b05321a83"
+                  >Export everything</a
+                >,
+                <a
+                  href="https://www.notion.so/Connect-everything-1130d8d48894466f826421c4b5468c2e"
+                  >Connect everything</a
+                >
+              </td>
+            </tr>
+            <tr id="26813a62-de13-4b3d-91e2-4a88af834755">
+              <td class="cell-title">
+                <a
+                  href="https://www.notion.so/Database-and-server-configuration-26813a62de134b3d91e24a88af834755"
+                  >Database and server configuration</a
+                >
+              </td>
+              <td class="cell-notion://projects/status_property">
+                <span class="status-value"
+                  ><div class="status-dot"></div>
+                  Backlog</span
+                >
+              </td>
+              <td class="cell-notion://projects/project_dates_property"></td>
+              <td class="cell-notion://projects/completion_rollup"></td>
+              <td class="cell-notion://projects/people_property"></td>
+              <td class="cell-notion://projects/project_to_task_relation">
+                <a
+                  href="https://www.notion.so/configure-unity-server-55f9283e70e14b6d9473441437694b99"
+                  >configure unity server </a
+                >,
+                <a
+                  href="https://www.notion.so/create-unity-server-a6eb04af83464d6aafc42d40b1c4f294"
+                  >create unity server </a
+                >,
+                <a
+                  href="https://www.notion.so/deploy-unity-server-on-rasberry-PI-7ce104a543514d36a41f67163f04396b"
+                  >deploy unity server on rasberry PI</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+  </body>
+</html>
 	
-</style></head><body><article id="6ae6b1be-fd33-429d-ab84-ee2126f28ede" class="page sans"><header><img class="page-cover-image" src="https://www.notlmuseum.ca/shared/skins/default/images/logo.svg" style="object-position:center 63.519999999999996%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="data:image/jpeg;base64,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"/></div><h1 class="page-title">Clio AR App</h1></header><div class="page-body"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Project name</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>Status</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z"></path></svg></span>Dates</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesRollup"><path d="M1.25293 6.82031C1.25293 9.88965 3.74805 12.3848 6.81738 12.3848C7.95898 12.3848 9.00488 12.0361 9.87988 11.4414L13.0244 14.5859C13.2158 14.7842 13.4824 14.873 13.749 14.873C14.3301 14.873 14.7471 14.4355 14.7471 13.8682C14.7471 13.5947 14.6514 13.3418 14.4668 13.1504L11.3428 10.0195C11.9922 9.12402 12.3818 8.0166 12.3818 6.82031C12.3818 3.75098 9.88672 1.25586 6.81738 1.25586C3.74805 1.25586 1.25293 3.75098 1.25293 6.82031ZM2.70215 6.82031C2.70215 4.55078 4.54102 2.70508 6.81738 2.70508C9.08691 2.70508 10.9326 4.55078 10.9326 6.82031C10.9326 9.08984 9.08691 10.9355 6.81738 10.9355C4.54102 10.9355 2.70215 9.08984 2.70215 6.82031Z"></path></svg></span>Completion</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>People</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesRelation"><path d="M13.1475 10.5869V3.72363C13.1475 3.25195 12.833 2.93066 12.3477 2.93066H5.48438C5.02637 2.93066 4.70508 3.27246 4.70508 3.67578C4.70508 4.07227 5.05371 4.40039 5.46387 4.40039H7.89746L10.8438 4.30469L9.59961 5.39844L3.08496 11.9199C2.92773 12.0771 2.8457 12.2686 2.8457 12.46C2.8457 12.8564 3.20801 13.2256 3.61816 13.2256C3.80957 13.2256 3.99414 13.1504 4.15137 12.9932L10.6729 6.47168L11.7803 5.22754L11.6641 8.05762V10.6074C11.6641 11.0176 11.9922 11.373 12.4023 11.373C12.8057 11.373 13.1475 11.0312 13.1475 10.5869Z"></path></svg></span>Tasks</th></tr></thead><tbody><tr id="ccc1d426-eb3a-4fd6-a779-4507dd69c7b3"><td class="cell-title"><a href="https://www.notion.so/IPAD-UI-ccc1d426eb3a4fd6a7794507dd69c7b3"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>IPAD UI </a></td><td class="cell-notion://projects/status_property"><span class="status-value"><div class="status-dot"></div>Backlog</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/people_property"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">N</span></span>Naitik</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">a</span></span>anishka shetty</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp4a4LEHumn8MfKTcN9w9j7_p8XFXysc7BvPTlba=s100" class="icon user-icon"/>Darshak Bambharoliya</span><span class="user"><img src="https://lh3.googleusercontent.com/a-/ACNPEu8rDXbW_0G-of5j0hKOCo5EtEYtVxNE1BSxAQEj9A=s100" class="icon user-icon"/>Aum Pandya</span></td><td class="cell-notion://projects/project_to_task_relation"><a href="https://www.notion.so/Configure-environment-variables-and-dockerize-the-development-repo-587ccfeebf294da4a4813a8ee3430dae">Configure environment variables and dockerize the development repo</a>, <a href="https://www.notion.so/Configure-simulator-for-IPAD-OS-c2dfe69d04044f8687931a99b4771f86">Configure simulator for IPAD OS</a>, <a href="https://www.notion.so/Create-Startup-Page-1487ca529abc4fce8e2a4a7070cb0d6a">Create Startup Page</a>, <a href="https://www.notion.so/Create-Login-Add-authentication-46bf003dc26741d4bfbdad67cb499c3c">Create Login / Add authentication </a>, <a href="https://www.notion.so/Create-main-menu-for-App-0d7af1e29a8446ebac79454b1cd5c280">Create main menu for App</a>, <a href="https://www.notion.so/Create-Floating-side-elements-9914558aa2c34faebba5dbd0c9f71615">Create Floating side elements </a>, <a href="https://www.notion.so/Create-log-out-button-to-end-tour-b8655892289e49e78a139a60ef5c650f">Create log out button to end tour</a>, <a href="https://www.notion.so/Create-Help-tutorial-tour-b16bbb123c134c4e8d16b8cac113997b">Create Help/tutorial tour </a>, <a href="https://www.notion.so/User-feedback-page-at-the-end-of-the-tour-1c8f7e50863f4305aad51671b3ea2bed">User feedback page at the end of the tour</a>, <a href="https://www.notion.so/New-taskcreate-Accessibility-setting-UI-3c2f64be939f461aa10be0bf3d3de294">New taskcreate Accessibility setting / UI</a>, <a href="https://www.notion.so/New-taskbootstrap-a-skeleton-app-43fdff01529b437ba5e21d4402e6741e">New taskbootstrap a skeleton app</a>, <a href="https://www.notion.so/Create-UI-elements-using-Figma-Adobe-12c8322fd8c64c1daa370f437d1a5d9e">Create UI elements using Figma/Adobe</a>, <a href="https://www.notion.so/Create-a-startup-screen-to-choose-if-the-user-is-a-minor-or-an-adult-e84411e2aa7d41b793a0c88e749e7f30">Create a startup screen to choose if the user is a minor or an adult</a></td></tr><tr id="d011c104-204e-4f56-ad8e-7ac7ed3154ab"><td class="cell-title"><a href="https://www.notion.so/IPAD-UI-Proof-of-Concept-d011c104204e4f56ad8e7ac7ed3154ab"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>IPAD UI - Proof of Concept</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-yellow"><div class="status-dot status-dot-color-yellow"></div>In Progress</span></td><td class="cell-notion://projects/project_dates_property"><time>@February 4, 2023</time></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/people_property"><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">N</span></span>Naitik</span><span class="user"><span class="icon text-icon user-icon"><span class="user-icon-inner">a</span></span>anishka shetty</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp4a4LEHumn8MfKTcN9w9j7_p8XFXysc7BvPTlba=s100" class="icon user-icon"/>Darshak Bambharoliya</span><span class="user"><img src="https://lh3.googleusercontent.com/a-/ACNPEu8rDXbW_0G-of5j0hKOCo5EtEYtVxNE1BSxAQEj9A=s100" class="icon user-icon"/>Aum Pandya</span></td><td class="cell-notion://projects/project_to_task_relation"><a href="https://www.notion.so/Install-Tools-required-ace6603d888443f58b863dc8a4c72054">Install Tools required</a>, <a href="https://www.notion.so/Configure-camera-api-to-work-with-unity-7b11f43a989e4144881809a401502b29">Configure camera api to work with unity</a>, <a href="https://www.notion.so/Connect-app-to-backend-Unity-1cb2a2c870564938ae97e83d5982f71c">Connect app to backend/Unity</a>, <a href="https://www.notion.so/Bootstrap-a-skeleton-app-9d6759d18f45490fb9ea1b136dbeba79">Bootstrap a skeleton app</a>, <a href="https://www.notion.so/Configure-simulator-for-IPAD-OS-0360e65dad554356909c74c210e55141">Configure simulator for IPAD OS</a>, <a href="https://www.notion.so/Create-UI-elements-using-Figma-Adobe-403895be32244e4f8985c91c8b2fb069">Create UI elements using Figma/Adobe</a>, <a href="https://www.notion.so/configure-simulator-for-IPAD-OS-b26fc44415ee4108964267ec7124e128">configure simulator for IPAD OS</a></td></tr><tr id="a039d11f-8d9a-4a36-be7a-345636fb54a7"><td class="cell-title"><a href="https://www.notion.so/Backend-Hosting-a039d11f8d9a4a36be7a345636fb54a7"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Backend/Hosting</a></td><td class="cell-notion://projects/status_property"><span class="status-value"><div class="status-dot"></div>Backlog</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp55gB25Cae8ZRvuHVzsBTwQR6f6Gfw4zco4UlK-6g=s100" class="icon user-icon"/>Sneh Patel</span><span class="user"><img src="https://lh3.googleusercontent.com/a-/ACNPEu9iSGC3vhSKZWutXmqafwgih8t31PblQRn9YtcECA=s100" class="icon user-icon"/>parth patel</span></td><td class="cell-notion://projects/project_to_task_relation"></td></tr><tr id="170c0e4d-2581-4715-8b6d-77b67ea917c5"><td class="cell-title"><a href="https://www.notion.so/Unity-Animation-and-plugins-170c0e4d258147158b6d77b67ea917c5"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Unity Animation and plugins</a></td><td class="cell-notion://projects/status_property"><span class="status-value"><div class="status-dot"></div>Backlog</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a-/ACNPEu9iSGC3vhSKZWutXmqafwgih8t31PblQRn9YtcECA=s100" class="icon user-icon"/>parth patel</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp55gB25Cae8ZRvuHVzsBTwQR6f6Gfw4zco4UlK-6g=s100" class="icon user-icon"/>Sneh Patel</span><span class="user"><img src="https://lh3.googleusercontent.com/a-/ACNPEu-9XVgWhfdjgi8q_IC8CFYVvCh6P8XMeBrUmVH2WAY=s100" class="icon user-icon"/>Akshar Patel</span></td><td class="cell-notion://projects/project_to_task_relation"><a href="https://www.notion.so/Create-AR-objects-List-48c1360d7eff4ff6bc38ebf52685059a">Create AR objects - [List]</a>, <a href="https://www.notion.so/Scan-museum-for-trigger-surfaces-eda67be095d341e39a4d4cd30683f30a">Scan museum for trigger surfaces</a>, <a href="https://www.notion.so/Enable-animation-flow-and-real-time-overlay-726a05c3de064216881c1131befcfa1d">Enable animation flow and real time overlay</a>, <a href="https://www.notion.so/Set-animation-boundaries-and-scaling-based-accessibility-settings-e3c425fbec15450186626b42b58a4782">Set animation boundaries and scaling based accessibility settings</a>, <a href="https://www.notion.so/Create-markers-and-triggers-on-scanned-3d-model-0e89c39c54ec4b20854f8991e15318f8">Create markers and triggers on scanned 3d model</a>, <a href="https://www.notion.so/Audio-Video-channel-6a8932b91ab34546b1551d42c0014ac4">Audio/Video channel</a>, <a href="https://www.notion.so/Filter-PG-rated-content-2633f72dd63e495f99f4b43e682e9fca">Filter PG rated content</a>, <a href="https://www.notion.so/Create-animation-based-on-true-events-33c2c720641a4982917436de61577e76">Create animation based on true events</a>, <a href="https://www.notion.so/Develop-interactive-animations-list-27a5733f9c96446491989c08374a2f42">Develop interactive animations -[list]</a></td></tr><tr id="aa7e1309-7ab8-4e3b-8aa9-cb4d6ba66afa"><td class="cell-title"><a href="https://www.notion.so/Unity-Animation-and-plugins-Proof-of-Concept-aa7e13097ab84e3b8aa9cb4d6ba66afa"><img class="icon" src="https://www.notion.so/icons/target_lightgray.svg"/>Unity Animation and plugins - Proof of Concept</a></td><td class="cell-notion://projects/status_property"><span class="status-value select-value-color-yellow"><div class="status-dot status-dot-color-yellow"></div>In Progress</span></td><td class="cell-notion://projects/project_dates_property"><time>@February 4, 2023</time></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/people_property"><span class="user"><img src="https://lh3.googleusercontent.com/a-/ACNPEu9iSGC3vhSKZWutXmqafwgih8t31PblQRn9YtcECA=s100" class="icon user-icon"/>parth patel</span><span class="user"><img src="https://lh3.googleusercontent.com/a/AEdFTp55gB25Cae8ZRvuHVzsBTwQR6f6Gfw4zco4UlK-6g=s100" class="icon user-icon"/>Sneh Patel</span><span class="user"><img src="https://lh3.googleusercontent.com/a-/ACNPEu-9XVgWhfdjgi8q_IC8CFYVvCh6P8XMeBrUmVH2WAY=s100" class="icon user-icon"/>Akshar Patel</span></td><td class="cell-notion://projects/project_to_task_relation"><a href="https://www.notion.so/Install-tools-required-5728eda4789a455d9cf8eff3dd567ec4">Install tools required </a>, <a href="https://www.notion.so/Build-an-avatar-in-unity-8cf12e56809246f894a7e48d02fd945e">Build an avatar in unity</a>, <a href="https://www.notion.so/Create-face-capture-for-the-avatar-6626167fef724a8e845c6dd151597f8d">Create face capture for the avatar</a>, <a href="https://www.notion.so/Create-animation-for-Avatar-99dfe1e7bf8a436bb57fd0676b0f6dee">Create animation for Avatar </a>, <a href="https://www.notion.so/Put-avatar-in-3d-scanned-environment-76ab8634bad14c499a09f74a862fca86">Put avatar in 3d scanned environment</a>, <a href="https://www.notion.so/Configure-triggers-for-animation-b0f21fe1f2324ca88bb12b46a720833f">Configure triggers for animation</a>, <a href="https://www.notion.so/Put-in-3d-awareness-14775edcd7f847c08c1f94bbfd8bf395">Put in 3d awareness </a>, <a href="https://www.notion.so/Export-everything-91d670ea582b40cb92f1419b05321a83">Export everything</a>, <a href="https://www.notion.so/Connect-everything-1130d8d48894466f826421c4b5468c2e">Connect everything</a></td></tr><tr id="26813a62-de13-4b3d-91e2-4a88af834755"><td class="cell-title"><a href="https://www.notion.so/Database-and-server-configuration-26813a62de134b3d91e24a88af834755">Database and server configuration</a></td><td class="cell-notion://projects/status_property"><span class="status-value"><div class="status-dot"></div>Backlog</span></td><td class="cell-notion://projects/project_dates_property"></td><td class="cell-notion://projects/completion_rollup"></td><td class="cell-notion://projects/people_property"></td><td class="cell-notion://projects/project_to_task_relation"><a href="https://www.notion.so/configure-unity-server-55f9283e70e14b6d9473441437694b99">configure unity server </a>, <a href="https://www.notion.so/create-unity-server-a6eb04af83464d6aafc42d40b1c4f294">create unity server </a>, <a href="https://www.notion.so/deploy-unity-server-on-rasberry-PI-7ce104a543514d36a41f67163f04396b">deploy unity server on rasberry PI</a></td></tr></tbody></table></div></article></body></html>
+	
+	
 	</foreignObject>
 </svg>
